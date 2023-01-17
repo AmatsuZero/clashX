@@ -6,7 +6,7 @@
 //  Copyright © 2019 west2online. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 import SwiftyJSON
 
 enum ClashProxyType: String, Codable {
@@ -134,11 +134,15 @@ class ClashProxy: Codable {
             }
 
             let rects = CGSize(width: CGFloat.greatestFiniteMagnitude, height: 20)
-            let attr = [NSAttributedString.Key.font: NSFont.menuBarFont(ofSize: 14)]
+            #if os(macOS)
+                let attr = [NSAttributedString.Key.font: NSFont.menuBarFont(ofSize: 14)]
+            #else
+                let attr = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]
+            #endif
             let length = (name as NSString)
                 .boundingRect(with: rect,
                               options: .usesLineFragmentOrigin,
-                              attributes: attr).width
+                              attributes: attr, context: nil).width
             ClashProxy.nameLengthCachedMap[name] = length
             return length
         })
@@ -216,10 +220,14 @@ class ClashProxyResp {
 
     lazy var maxProxyNameLength: CGFloat = {
         let rect = CGSize(width: CGFloat.greatestFiniteMagnitude, height: 20)
-        let attr = [NSAttributedString.Key.font: NSFont.menuBarFont(ofSize: 0)]
+        #if os(macOS)
+            let attr = [NSAttributedString.Key.font: NSFont.menuBarFont(ofSize: 0)]
+        #else
+            let attr = [NSAttributedString.Key.font: UIFont.systemFontSize]
+        #endif
         return (self.longestProxyGroupName as NSString)
             .boundingRect(with: rect,
                           options: .usesLineFragmentOrigin,
-                          attributes: attr).width
+                          attributes: attr, context: nil).width
     }()
 }

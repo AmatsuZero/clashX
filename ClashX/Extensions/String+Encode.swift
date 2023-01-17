@@ -6,7 +6,7 @@
 //  Copyright © 2019 west2online. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 
 extension String {
     var encoded: String {

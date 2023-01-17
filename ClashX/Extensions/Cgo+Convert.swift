@@ -6,6 +6,8 @@
 //  Copyright © 2019 west2online. All rights reserved.
 //
 
+import Foundation
+
 extension String {
     func goStringBuffer() -> UnsafeMutablePointer<Int8> {
         if let pointer = (self as NSString).utf8String {

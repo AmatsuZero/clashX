@@ -6,7 +6,6 @@
 //  Copyright © 2018年 yichengchen. All rights reserved.
 //
 
-import AppKit
 import Foundation
 import SwiftyJSON
 
@@ -29,8 +28,10 @@ class ConfigFileManager {
             }
             for event in events {
                 if event.flags.contains(.ItemModified) || event.flags.contains(.ItemRenamed) {
+                    #if os(macOS)
                     NSUserNotificationCenter.default
                         .postConfigFileChangeDetectionNotice()
+                    #endif
                     NotificationCenter.default
                         .post(Notification(name: .configFileChange))
                     break
