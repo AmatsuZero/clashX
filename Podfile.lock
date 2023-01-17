@@ -7,6 +7,7 @@ PODS:
   - CocoaLumberjack/Swift (3.8.0):
     - CocoaLumberjack/Core
   - FlexibleDiff (0.0.9)
+  - GoClash (0.1.0)
   - GzipSwift (5.1.1)
   - LetsMove (1.25)
   - RxCocoa (6.5.0):
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - AppCenter/Analytics
   - CocoaLumberjack/Swift
   - FlexibleDiff
+  - GoClash (from `ClashX/goClash`)
   - GzipSwift
   - LetsMove
   - RxCocoa
@@ -53,11 +55,16 @@ SPEC REPOS:
     - SwiftyJSON
     - WebViewJavascriptBridge
 
+EXTERNAL SOURCES:
+  GoClash:
+    :path: ClashX/goClash
+
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
   AppCenter: 30ac5adefc8fc41d9530f1cc91829810a6af4c93
   CocoaLumberjack: 78abfb691154e2a9df8ded4350d504ee19d90732
   FlexibleDiff: b9ee9b8305b42c784f5dd40589203c97c55bbaa0
+  GoClash: a83bc7bd6ea2899781c049f2683097cc16c184b5
   GzipSwift: 893f3e48e597a1a4f62fafcb6514220fcf8287fa
   LetsMove: 7b9fe44737707d984fbd3f47af46609a9a07b461
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
@@ -69,6 +76,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
 
-PODFILE CHECKSUM: 65c4fea9075620263af0fbc97bc896af91d6b9fa
+PODFILE CHECKSUM: c6b1250a35579c85e8df701a9288a92306076c32
 
 COCOAPODS: 1.11.0

@@ -28,13 +28,14 @@ target 'ClashiOS' do
   common_pods
   pod 'WebViewJavascriptBridge', :modular_headers => true
   pod 'SnapKit', '~> 5.6.0'
+  pod 'GoClash', :path => 'ClashX/goClash'
 end
 
 target 'ClashiOSTests' do 
 
 end
 
-target 'ClashiOSTests' do
+target 'ClashiOSUITests' do
 
 end
 
